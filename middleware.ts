@@ -1,7 +1,8 @@
 // middleware.ts
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export function middleware(request: Request) {
+export function middleware(request: NextRequest) {
   const basicAuth = request.headers.get("authorization");
   const user = "user";
   const pass = "password";
@@ -19,3 +20,8 @@ export function middleware(request: Request) {
     },
   });
 }
+
+// 適用するパスを指定（例：すべてのページに適用）
+export const config = {
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+};
