@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { get } from "@vercel/edge-config";
 
-export const runtime = "edge";
+// Edge Runtimeからノードランタイムに変更
+export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,40 +19,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Edge Configからメール設定を取得
-    const emailConfig = await get("emailConfig");
+    // Resendの初期化
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    if (!emailConfig) {
-      return NextResponse.json(
-        { error: "メール設定の取得に失敗しました" },
-        { status: 500 }
-      );
-    }
-
-    // Nodemailerトランスポーターの作成
-    const transporter = nodemailer.createTransport({
-      host: emailConfig.host,
-      port: emailConfig.port,
-      secure: emailConfig.secure,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // メールオプションの設定
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO,
+    // メール送信
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: [process.env.EMAIL_TO || ""],
       subject: `ウェブサイトからのお問い合わせ: ${subject}`,
-      text: `
-        名前: ${name}
-        メールアドレス: ${email}
-        件名: ${subject}
-        
-        メッセージ:
-        ${message}
-      `,
       html: `
         <h3>ウェブサイトからのお問い合わせ</h3>
         <p><strong>名前:</strong> ${name}</p>
@@ -60,35 +35,13 @@ export async function POST(request: NextRequest) {
         <p><strong>メッセージ:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,
-    };
-
-    // メール送信
-    await transporter.sendMail(mailOptions);
+    });
 
     // 自動返信メール
-    const autoReplyOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: [email],
       subject: "【Waka-Tsuki】お問い合わせありがとうございます",
-      text: `
-        ${name} 様
-        
-        Waka-Tsukiへのお問い合わせありがとうございます。
-        以下の内容でお問い合わせを受け付けました。
-        
-        件名: ${subject}
-        メッセージ:
-        ${message}
-        
-        内容を確認次第、担当者よりご連絡いたします。
-        しばらくお待ちくださいませ。
-        
-        ※このメールは自動送信されています。
-        
-        --
-        Waka-Tsuki
-        info@waka-tsuki.jp
-      `,
       html: `
         <p>${name} 様</p>
         <p>Waka-Tsukiへのお問い合わせありがとうございます。<br>
@@ -107,10 +60,7 @@ export async function POST(request: NextRequest) {
         Waka-Tsuki<br>
         info@waka-tsuki.jp</p>
       `,
-    };
-
-    // 自動返信メール送信
-    await transporter.sendMail(autoReplyOptions);
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

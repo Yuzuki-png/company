@@ -1,29 +1,45 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
+  // ページ遷移検出とスクロールリセット
   useEffect(() => {
+    // ページ遷移時に強制的にトップにスクロール
+    window.scrollTo(0, 0);
+
+    // スクロール状態をリセット
+    setScrolled(false);
+
     // 初回マウント時のアニメーション
     animateHeader();
-
-    // パス変更時のイベントリスナー
-    function handleRouteChange() {
-      animateHeader();
-    }
-
-    // クリーンアップ関数
-    return () => {
-      // 必要に応じてクリーンアップを行う
-    };
   }, [pathname]);
+
+  // スクロール検出（別のuseEffectで分離）
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // 初期状態の確認
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const animateHeader = () => {
     gsap.from(".header-content", {
@@ -39,60 +55,74 @@ const Header: React.FC = () => {
   };
 
   const menuItems = [
-    { href: "/", label: "Home" },
-    { href: "/poem", label: "Poem" },
-    { href: "/vision", label: "Vision" },
-    { href: "/concept", label: "Concept" },
-    { href: "/project", label: "Project" },
-    { href: "/profile", label: "Profile" },
-    { href: "/event", label: "Event" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: "home" },
+    { href: "/about", label: "about" },
+    { href: "/profile", label: "profile" },
+    { href: "/works", label: "works" },
+    { href: "/shop", label: "shop" },
+    { href: "/contact", label: "contact" },
   ];
 
-  const externalLinks = [
-    { href: "https://www.mayamoon-art.com/", label: "Shop" },
-    { href: "https://www.instagram.com/mayamoon0000/", label: "Instagram" },
-  ];
+  // スクロール状態に基づく背景
+  const headerBgClass = scrolled
+    ? "bg-black/80 backdrop-blur-md"
+    : "bg-transparent !important";
 
   return (
-    <header className="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
-      <div className="header-content container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="text-2xl font-bold">Waka-Tsuki</div>
-        </Link>
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${headerBgClass}`}
+      style={{
+        background: scrolled ? "rgba(0, 0, 0, 0.8)" : "transparent",
+        backdropFilter: scrolled ? "blur(8px)" : "none",
+      }}
+    >
+      <div className="header-content container mx-auto px-4 py-6 flex justify-end items-center">
+        {/* デスクトップメニュー（右寄せ） */}
+        <div className="hidden md:flex items-center space-x-8">
+          <nav className="flex space-x-10">
+            {menuItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`transition-colors font-light text-white text-lg hover:opacity-75 ${
+                  pathname === item.href ? "font-normal" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        {/* デスクトップメニュー */}
-        <nav className="hidden md:flex space-x-6">
-          {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`hover:text-indigo-600 transition-colors ${
-                pathname === item.href ? "text-indigo-600 font-medium" : ""
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          <div className="border-l border-gray-300 h-6 mx-2"></div>
-
-          {externalLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-indigo-600 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* SNSアイコン */}
+        <div className="hidden md:flex items-center ml-10 space-x-6">
+          {/* Instagramアイコン */}
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:opacity-75"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+          {/* noteアイコン */}
+          <a
+            href="https://note.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:opacity-75"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.7 3.3v15.4H5.3V3.3h13.4m0-3.3H5.3C2.4 0 0 2.4 0 5.3v15.4C0 21.6 2.4 24 5.3 24h13.4c2.9 0 5.3-2.4 5.3-5.3V5.3C24 2.4 21.6 0 18.7 0zm-3.7 11.9c0 .9-.7 1.6-1.6 1.6H8.2c-.9 0-1.6-.7-1.6-1.6v-1.8h2.4v1.7h4v-4.1l-5-.7c-.4-.1-.7-.4-.7-.8V5.1c0-.8.7-1.5 1.6-1.5h5.2c.9 0 1.6.7 1.6 1.6v1.8h-2.4V5.2h-4v4.1l5 .7c.4.1.7.4.7.8v1.9l0 .2z" />
+            </svg>
+          </a>
+        </div>
 
         {/* モバイルメニューボタン */}
         <button
-          className="md:hidden text-gray-600 focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           onClick={toggleMenu}
         >
           {isMenuOpen ? (
@@ -129,14 +159,14 @@ const Header: React.FC = () => {
 
       {/* モバイルメニュー */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white py-4 px-4 shadow-lg">
-          <nav className="flex flex-col space-y-4">
+        <div className="md:hidden bg-black/80 backdrop-blur-md py-6 px-4">
+          <nav className="flex flex-col space-y-6">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`hover:text-indigo-600 transition-colors ${
-                  pathname === item.href ? "text-indigo-600 font-medium" : ""
+                className={`transition-colors text-white text-lg ${
+                  pathname === item.href ? "font-normal" : "font-light"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -144,19 +174,37 @@ const Header: React.FC = () => {
               </Link>
             ))}
 
-            <div className="border-t border-gray-300 my-2"></div>
-
-            {externalLinks.map((link) => (
+            {/* モバイルSNSアイコン */}
+            <div className="flex space-x-6 pt-4">
               <a
-                key={link.href}
-                href={link.href}
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-indigo-600 transition-colors"
+                className="text-white"
               >
-                {link.label}
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
               </a>
-            ))}
+              <a
+                href="https://note.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18.7 3.3v15.4H5.3V3.3h13.4m0-3.3H5.3C2.4 0 0 2.4 0 5.3v15.4C0 21.6 2.4 24 5.3 24h13.4c2.9 0 5.3-2.4 5.3-5.3V5.3C24 2.4 21.6 0 18.7 0zm-3.7 11.9c0 .9-.7 1.6-1.6 1.6H8.2c-.9 0-1.6-.7-1.6-1.6v-1.8h2.4v1.7h4v-4.1l-5-.7c-.4-.1-.7-.4-.7-.8V5.1c0-.8.7-1.5 1.6-1.5h5.2c.9 0 1.6.7 1.6 1.6v1.8h-2.4V5.2h-4v4.1l5 .7c.4.1.7.4.7.8v1.9l0 .2z" />
+                </svg>
+              </a>
+            </div>
           </nav>
         </div>
       )}

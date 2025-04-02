@@ -3,190 +3,88 @@ import React from "react";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-white text-black py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Waka-Tsuki</h3>
-            <p className="text-gray-400 mb-4">
-              誰もがいつでも帰ってこれる詩とアートの庭
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.instagram.com/mayamoon0000/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <span className="sr-only">Instagram</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465.668.25 1.235.585 1.8 1.15.565.565.901 1.132 1.15 1.8.247.636.416 1.363.465 2.427.048 1.024.06 1.379.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427-.25.668-.585 1.235-1.15 1.8-.565.565-1.132.901-1.8 1.15-.636.247-1.363.416-2.427.465-1.024.048-1.379.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465-.668-.25-1.235-.585-1.8-1.15-.565-.565-.901-1.132-1.15-1.8-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.379-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427.25-.668.585-1.235 1.15-1.8.565-.565 1.132-.901 1.8-1.15.636-.247 1.363-.416 2.427-.465 1.024-.048 1.379-.06 3.808-.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://www.instagram.com/mayamoon_artwork/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <span className="sr-only">Artwork Instagram</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465.668.25 1.235.585 1.8 1.15.565.565.901 1.132 1.15 1.8.247.636.416 1.363.465 2.427.048 1.024.06 1.379.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427-.25.668-.585 1.235-1.15 1.8-.565.565-1.132.901-1.8 1.15-.636.247-1.363.416-2.427.465-1.024.048-1.379.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465-.668-.25-1.235-.585-1.8-1.15-.565-.565-.901-1.132-1.15-1.8-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.379-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427.25-.668.585-1.235 1.15-1.8.565-.565 1.132-.901 1.8-1.15.636-.247 1.363-.416 2.427-.465 1.024-.048 1.379-.06 3.808-.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://note.com/mayamoon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <span className="sr-only">note</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M4 19.5v-15A2.5 2.5 0 016.5 2h11A2.5 2.5 0 0120 4.5v15a2.5 2.5 0 01-2.5 2.5h-11A2.5 2.5 0 014 19.5zm2.5-15v15h11v-15h-11z" />
-                  <path d="M8 7h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UC1SB60kDwlY-B7WA4sc45Ew"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <span className="sr-only">YouTube</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-4">リンク</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/poem"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  詩
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/profile"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  プロフィール
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/project"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  活動内容
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/event"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  イベント
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-4">活動</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://community.camp-fire.jp/projects/view/379133"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  ノートと種まき
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/p/DGKhlNDPK6m/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  心が旅するお茶会
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://entrie.net/category/mayamoon/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  やさしいあなたへお手紙を
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.manpuku-veggie.com/at-home-veggies/mayamoon-01"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  まちなかで自然くらし
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-4">お問い合わせ</h3>
-            <p className="text-gray-400 mb-2">メール: info@waka-tsuki.jp</p>
-            <p className="text-gray-400 mb-2">東京都世田谷区</p>
-            <p className="text-gray-400">お気軽にご連絡ください</p>
-          </div>
+        {/* Top section */}
+        <div className="mb-16">
+          <p className="text-lg font-light mb-24">株式会社月の庭</p>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-center text-gray-500 text-sm">
-            &copy; {currentYear} Waka-Tsuki All rights reserved.
+        {/* Navigation links */}
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-12">
+          <Link
+            href="/about"
+            className="text-black hover:opacity-70 font-light"
+          >
+            about
+          </Link>
+          <Link
+            href="/profile"
+            className="text-black hover:opacity-70 font-light"
+          >
+            profile
+          </Link>
+          <Link
+            href="/works"
+            className="text-black hover:opacity-70 font-light"
+          >
+            works
+          </Link>
+          <Link href="/shop" className="text-black hover:opacity-70 font-light">
+            shop
+          </Link>
+          <Link
+            href="/contact"
+            className="text-black hover:opacity-70 font-light"
+          >
+            contact
+          </Link>
+        </div>
+
+        {/* Copyright and social icons */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-black font-light mb-4 md:mb-0">
+            copyright©Tsukinoniwa.All Rights Reserved.
           </p>
+
+          <div className="flex space-x-6">
+            {/* Instagram icon */}
+            <a
+              href="https://www.instagram.com/mayamoon0000/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:opacity-70"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+
+            {/* Note icon */}
+            <a
+              href="https://note.com/mayamoon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:opacity-70"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.7 3.3v15.4H5.3V3.3h13.4m0-3.3H5.3C2.4 0 0 2.4 0 5.3v15.4C0 21.6 2.4 24 5.3 24h13.4c2.9 0 5.3-2.4 5.3-5.3V5.3C24 2.4 21.6 0 18.7 0zm-3.7 11.9c0 .9-.7 1.6-1.6 1.6H8.2c-.9 0-1.6-.7-1.6-1.6v-1.8h2.4v1.7h4v-4.1l-5-.7c-.4-.1-.7-.4-.7-.8V5.1c0-.8.7-1.5 1.6-1.5h5.2c.9 0 1.6.7 1.6 1.6v1.8h-2.4V5.2h-4v4.1l5 .7c.4.1.7.4.7.8v1.9l0 .2z" />
+              </svg>
+            </a>
+
+            {/* Facebook icon */}
+            <a
+              href="https://www.facebook.com/mayako.nishi.3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:opacity-70"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

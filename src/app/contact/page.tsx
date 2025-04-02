@@ -129,7 +129,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-black"
                   />
                 </div>
 
@@ -147,7 +147,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-black"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-black"
                   />
                 </div>
 
@@ -183,7 +183,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-black"
                   ></textarea>
                 </div>
 
@@ -200,26 +200,6 @@ export default function Contact() {
                 </div>
               </form>
             )}
-          </div>
-
-          <div className="fade-in grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-blue-50 rounded-lg p-6 text-center">
-              <div className="text-4xl mb-4">📧</div>
-              <h3 className="text-xl font-semibold mb-2">メール</h3>
-              <p className="text-gray-700">info@waka-tsuki.jp</p>
-            </div>
-
-            <div className="bg-purple-50 rounded-lg p-6 text-center">
-              <div className="text-4xl mb-4">📱</div>
-              <h3 className="text-xl font-semibold mb-2">SNS</h3>
-              <p className="text-gray-700">Instagram: @mayamoon0000</p>
-            </div>
-
-            <div className="bg-amber-50 rounded-lg p-6 text-center">
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-xl font-semibold mb-2">所在地</h3>
-              <p className="text-gray-700">東京都世田谷区</p>
-            </div>
           </div>
         </div>
       </div>
