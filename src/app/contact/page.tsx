@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -81,8 +82,20 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container mx-auto px-4">
+    <div className="pt-24 pb-20 relative min-h-screen">
+      {/* 背景画像 */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/images/contacts/contacts_background.png"
+          alt="お問い合わせ背景"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+          className="opacity-90"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <h1 className="fade-in text-4xl md:text-5xl font-bold mb-12 text-center">
           お問い合わせ
         </h1>

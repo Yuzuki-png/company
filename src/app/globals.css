@@ -24,6 +24,40 @@ body {
   color: var(--foreground);
 }
 
+/* フォント設定 */
+.fira-sans-thin {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.fira-sans-regular {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* プライバシーポリシーと利用規約のスタイル調整 */
+.privacy-policy-content p,
+.terms-of-service-content p,
+.privacy-policy-content li,
+.terms-of-service-content li {
+  color: #000000;
+  font-weight: 400;
+}
+
+.privacy-policy-content h2,
+.terms-of-service-content h2 {
+  color: #000000;
+  font-weight: 600;
+}
+
+.privacy-policy-content h3,
+.terms-of-service-content h3 {
+  color: #000000;
+  font-weight: 500;
+}
+
 /* アニメーション */
 @keyframes fadeIn {
   from {

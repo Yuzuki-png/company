@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -44,9 +45,25 @@ const Footer: React.FC = () => {
 
         {/* Copyright and social icons */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-black font-light mb-4 md:mb-0">
-            copyright©Tsukinoniwa.All Rights Reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-4 mb-4 md:mb-0">
+            <p className="text-black font-light">
+              copyright©Tsukinoniwa.All Rights Reserved.
+            </p>
+            <div className="flex space-x-4">
+              <Link
+                href="/privacy-policy"
+                className="text-black hover:opacity-70 font-light text-sm"
+              >
+                プライバシーポリシー
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="text-black hover:opacity-70 font-light text-sm"
+              >
+                利用規約
+              </Link>
+            </div>
+          </div>
 
           <div className="flex space-x-6">
             {/* Instagram icon */}
@@ -63,14 +80,18 @@ const Footer: React.FC = () => {
 
             {/* Note icon */}
             <a
-              href="https://note.com/mayamoon"
+              href="https://note.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black hover:opacity-70"
+              className="text-black flex items-center"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.7 3.3v15.4H5.3V3.3h13.4m0-3.3H5.3C2.4 0 0 2.4 0 5.3v15.4C0 21.6 2.4 24 5.3 24h13.4c2.9 0 5.3-2.4 5.3-5.3V5.3C24 2.4 21.6 0 18.7 0zm-3.7 11.9c0 .9-.7 1.6-1.6 1.6H8.2c-.9 0-1.6-.7-1.6-1.6v-1.8h2.4v1.7h4v-4.1l-5-.7c-.4-.1-.7-.4-.7-.8V5.1c0-.8.7-1.5 1.6-1.5h5.2c.9 0 1.6.7 1.6 1.6v1.8h-2.4V5.2h-4v4.1l5 .7c.4.1.7.4.7.8v1.9l0 .2z" />
-              </svg>
+              <Image
+                src="/images/icon/note_black.png"
+                alt="note"
+                width={70}
+                height={70}
+                className="object-contain"
+              />
             </a>
 
             {/* Facebook icon */}

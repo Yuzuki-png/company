@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Shippori_Mincho } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -9,9 +10,15 @@ const shipporiMincho = Shippori_Mincho({
   display: "swap",
 });
 
+const firaSans = Fira_Sans({
+  weight: ["100", "400"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata = {
   title: "Waka-Tsuki | 詩とアートの庭",
-  description: "誰もがいつでも帰ってこれる詩とアートの庭",
+  description: "誰もがいつでも帰ってくる詩とアートの庭",
 };
 
 export default function RootLayout({
@@ -21,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={shipporiMincho.className}>
+      <body className={`${shipporiMincho.className} ${firaSans.className}`}>
         <Header />
         <main>{children}</main>
         <Footer />

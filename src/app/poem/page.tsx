@@ -47,7 +47,7 @@ export default function Poem() {
             <p className="text-center text-lg md:text-xl mb-8">
               誰もがいつでも
               <br />
-              帰ってこれる場所
+              帰ってくる場所
               <br />
               それが「月の庭」
             </p>

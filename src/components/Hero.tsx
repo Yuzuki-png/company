@@ -72,9 +72,6 @@ const Hero = () => {
         <div className="hero-text text-lg md:text-xl font-light mb-6 max-w-3xl mx-auto">
           月の光がそっと夜を包むように、誰かの心に静かに寄り添えますように
         </div>
-        <div className="hero-subtext text-lg font-light max-w-3xl mx-auto opacity-80">
-          (触ると出てくるように)
-        </div>
 
         {showMessage && (
           <div className="mt-10 bg-black/30 backdrop-blur-sm p-6 rounded-lg max-w-2xl mx-auto animate-fade-in">

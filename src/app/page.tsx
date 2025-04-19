@@ -62,7 +62,9 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="fade-in-section max-w-5xl mx-auto">
-            <h2 className="text-3xl font-light mb-16 text-black">news</h2>
+            <h2 className="text-3xl font-light mb-16 text-black fira-sans-thin">
+              news
+            </h2>
 
             <div className="flex flex-col md:flex-row ">
               <div className="md:w-1/2">
@@ -96,7 +98,9 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row">
               <div className="md:w-full">
-                <div className="mb-2 text-gray-500 font-light">2025年5月</div>
+                <div className="mb-2 text-gray-500 font-light fira-sans-thin">
+                  2025年5月
+                </div>
                 <h3 className="text-xl font-light mb-2 text-gray-600">
                   大宮「tokiwa」にてpopup開催
                 </h3>
@@ -107,7 +111,17 @@ export default function Home() {
       </section>
 
       {/* 庭のコンセプトセクション */}
-      <section className="py-24 bg-slate-800 text-white">
+      <section className="py-24 relative text-white">
+        <div className="flex items-center justify-center">
+          <Image
+            src="/images/home/home_tuki.jpg"
+            alt="月の庭の背景"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            priority
+            className="opacity-90"
+          />
+        </div>
         <div className="container mx-auto px-4">
           <div className="fade-in-section max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-light mb-16">月の庭</h2>
@@ -139,7 +153,7 @@ export default function Home() {
                 <br />
                 ここに
                 <br />
-                帰ってこれる
+                帰ってくる
               </p>
             </div>
           </div>

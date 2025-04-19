@@ -51,16 +51,27 @@ export default function Profile() {
   const renderMayamoonProfile = () => {
     return (
       <div className="h-screen relative flex flex-col justify-center items-center">
-        {/* 背景 - 後でPNGに置き換え */}
-        <div className="absolute inset-0 bg-blue-50">
-          {/* 後で水彩画背景を入れる */}
+        {/* 背景画像 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/images/profile/mayamoon_background.png"
+            alt="Mayamoon背景"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            className="opacity-90"
+          />
         </div>
 
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 profile-content">
           <div className="flex flex-col items-center mb-10">
-            {/* プロフィール画像 - 後で実際の画像に置き換え */}
-            <div className="w-64 h-64 rounded-full bg-gray-200 mb-6 relative overflow-hidden">
-              {/* 画像プレースホルダー */}
+            {/* プロフィール画像 - 輪郭なし */}
+            <div className="w-64 h-64 mb-6 relative overflow-hidden">
+              <Image
+                src="/images/profile/mayamoonProfile.png"
+                alt="Mayamoon プロフィール画像"
+                fill
+                style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
 
@@ -99,16 +110,27 @@ export default function Profile() {
   const renderYoshikobaProfile = () => {
     return (
       <div className="min-h-screen relative flex flex-col justify-center items-center py-20">
-        {/* 背景 - 後でPNGに置き換え */}
-        <div className="absolute inset-0 bg-white">
-          {/* 後でパターン背景を入れる */}
+        {/* 背景画像 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/images/profile/yosikoba_background.png"
+            alt="よしこば背景"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            className="opacity-90"
+          />
         </div>
 
         <div className="relative z-10 w-full max-w-3xl mx-auto px-4 profile-content">
           <div className="flex flex-col items-center mb-10">
-            {/* イラスト - 後で実際の画像に置き換え */}
+            {/* プロフィール画像 */}
             <div className="w-32 h-32 mb-6 relative">
-              {/* イラストプレースホルダー */}
+              <Image
+                src="/images/profile/yosikobaProfile.png"
+                alt="よしこば プロフィール画像"
+                fill
+                style={{ objectFit: "contain" }}
+              />
             </div>
 
             <h2 className="text-black text-xl font-light mb-1 text-center">
@@ -123,7 +145,15 @@ export default function Profile() {
                 東京国税局の国税専門官を経て2017年にライターとして独立。富裕層の税務調査を行なった経験を活かし、書籍の出版やセミナーなどを行っている。自分らしい生き方を目指す人に向けた『よしこばリバティカレッジ』を主宰。
               </p>
               <p className="text-black mt-6">
-                仕事の実績はこちら (https://yoshi-koba.com/portfolio)
+                仕事の実績は
+                <Link
+                  href="https://yoshi-koba.com/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  こちら
+                </Link>
               </p>
             </div>
           </div>
