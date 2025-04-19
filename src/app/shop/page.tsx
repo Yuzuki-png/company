@@ -88,7 +88,7 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/28.png"
+              src="/images/shop/shop_background.png"
               alt="月の庭の背景"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}

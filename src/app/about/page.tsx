@@ -96,7 +96,7 @@ export default function About() {
           {/* 後でここに葉の画像を入れる */}
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/27.png"
+              src="/images/about/about_corporation_background.png"
               alt="月の庭の背景"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
@@ -125,7 +125,7 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/28.png"
+              src="/images/about/about_vision_background.png"
               alt="月の庭の背景"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
@@ -161,7 +161,7 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/29.png"
+              src="/images/about/about_philosophy_background.png"
               alt="月の庭の背景"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
@@ -200,7 +200,7 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/30.png"
+              src="/images/about/about_project_background.png"
               alt="月の庭の背景"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
@@ -242,7 +242,7 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/31.png"
+              src="/images/about/about_company_background.png"
               alt="月の庭の背景"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}

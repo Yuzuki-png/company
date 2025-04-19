@@ -55,7 +55,7 @@ const Hero = () => {
       {/* 背景画像 */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="/images/20230607_101856 (1).jpg"
+          src="/images/home/home_tuki_background.jpg"
           alt="月の庭の背景"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
