@@ -75,7 +75,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="text-left">
+          <div className="text-center">
             <h2 className="text-black text-xl font-light mb-2">
               株式会社月の庭　代表取締役
             </h2>
@@ -83,7 +83,7 @@ export default function Profile() {
               Mayamoon　プロフィール
             </h3>
 
-            <div className="text-black space-y-4 text-lg font-light">
+            <div className="text-black space-y-4 text-lg font-light text-center">
               <p>
                 18年間の商社勤務を経て、子どもの不登校・引きこもりを機に退職。
               </p>
@@ -97,7 +97,9 @@ export default function Profile() {
                 無農薬・無肥料の畑仕事、家の中での静かな時間や当たり前の日常の生活を大切にしている。
               </p>
               <p>
-                オンラインコミュニティ「ノートと種まき」の主宰、哲学対話を通じて安心して本音を語れる場を育んでいる。
+                オンラインコミュニティ「ノートと種まき」の主宰、
+                <br />
+                哲学対話を通じて安心して本音を語れる場を育んでいる。
               </p>
             </div>
           </div>
@@ -113,7 +115,7 @@ export default function Profile() {
         {/* 背景画像 */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/profile/yosikoba_background.png"
+            src="/images/profile/mayamoon_background.png"
             alt="よしこば背景"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
@@ -142,7 +144,9 @@ export default function Profile() {
 
             <div className="text-black space-y-4 text-base font-light text-center max-w-2xl">
               <p>
-                東京国税局の国税専門官を経て2017年にライターとして独立。富裕層の税務調査を行なった経験を活かし、書籍の出版やセミナーなどを行っている。自分らしい生き方を目指す人に向けた『よしこばリバティカレッジ』を主宰。
+                東京国税局の国税専門官を経て2017年にライターとして独立。富裕層の税務調査を行なった経験を活かし、書籍の出版やセミナーなどを行っている。
+                <br />
+                自分らしい生き方を目指す人に向けた『よしこばリバティカレッジ』を主宰。
               </p>
               <p className="text-black mt-6">
                 仕事の実績は

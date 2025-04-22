@@ -115,7 +115,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors"
+                  className="inline-block bg-[#8fbc8f] hover:bg-[#7daa7d] text-white font-semibold py-2 px-6 rounded-full transition-colors"
                 >
                   新しいお問い合わせをする
                 </button>
@@ -204,7 +204,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-colors ${
+                    className={`inline-block bg-[#8fbc8f] hover:bg-[#7daa7d] text-white font-semibold py-3 px-8 rounded-full transition-colors ${
                       isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                     }`}
                   >

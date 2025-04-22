@@ -22,19 +22,81 @@
 body {
   background: var(--background);
   color: var(--foreground);
-}
-
-/* フォント設定 */
-.fira-sans-thin {
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.fira-sans-regular {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Noto Serif JP", serif !important;
   font-weight: 400;
-  font-style: normal;
+}
+
+/* 英語テキスト用のクラス */
+.lora-light,
+.lora-regular {
+  font-family: "Lora", serif !important;
+}
+
+/* 日本語フォントウェイト設定 */
+.font-jp-thin {
+  font-weight: 200;
+}
+
+.font-jp-light {
+  font-weight: 300;
+}
+
+.font-jp-regular {
+  font-weight: 400;
+}
+
+.font-jp-medium {
+  font-weight: 500;
+}
+
+.font-jp-bold {
+  font-weight: 700;
+}
+
+.font-jp-black {
+  font-weight: 900;
+}
+
+/* 英語フォントウェイト設定 */
+.font-en-regular {
+  font-weight: 400;
+}
+
+.font-en-medium {
+  font-weight: 500;
+}
+
+.font-en-semibold {
+  font-weight: 600;
+}
+
+.font-en-bold {
+  font-weight: 700;
+}
+
+/* 共通フォントウェイト設定 - 言語に関わらず同じ太さを適用 */
+.font-thin {
+  font-weight: 300 !important; /* Loraは200がないため300を使用 */
+}
+
+.font-light {
+  font-weight: 400 !important; /* Loraの最も細いウェイト */
+}
+
+.font-regular {
+  font-weight: 400 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
 }
 
 /* プライバシーポリシーと利用規約のスタイル調整 */
@@ -85,4 +147,24 @@ body {
 
 .animate-slide-in-right {
   animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* フォント関連の設定強化 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  font-family: "Noto Serif JP", serif !important;
+  font-weight: 400;
+}
+
+.font-en {
+  font-family: "Lora", serif !important;
+  font-weight: 400;
 }

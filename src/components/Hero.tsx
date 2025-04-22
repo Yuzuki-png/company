@@ -66,10 +66,16 @@ const Hero = () => {
 
       {/* コンテンツ */}
       <div className="container mx-auto px-4 relative z-10 text-center text-white">
-        <h1 className="hero-title text-5xl md:text-7xl font-light mb-14">
+        <h1
+          className="hero-title text-5xl md:text-7xl font-light mb-14"
+          style={{ fontFamily: "'Noto Serif JP', serif" }}
+        >
           月の庭
         </h1>
-        <div className="hero-text text-lg md:text-xl font-light mb-6 max-w-3xl mx-auto">
+        <div
+          className="hero-text text-lg md:text-xl font-light mb-6 max-w-3xl mx-auto"
+          style={{ fontFamily: "'Noto Serif JP', serif" }}
+        >
           月の光がそっと夜を包むように、誰かの心に静かに寄り添えますように
         </div>
 

@@ -73,7 +73,7 @@ export default function Home() {
                   「いつか消えてしまう私たちへ」個展開催
                 </h3>
                 <Link
-                  href="/news/detail"
+                  href="https://www.instagram.com/p/DGz73WMPkQt/?img_index=1"
                   className="text-gray-600 hover:opacity-70 font-light"
                 >
                   詳細はこちら
@@ -114,7 +114,7 @@ export default function Home() {
       <section className="py-24 relative text-white">
         <div className="flex items-center justify-center">
           <Image
-            src="/images/home/home_tuki.jpg"
+            src="/images/home/home_tuki_background.jpg"
             alt="月の庭の背景"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
@@ -124,8 +124,8 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4">
           <div className="fade-in-section max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-light mb-16">月の庭</h2>
-            <div className="flex flex-col space-y-8 font-light text-lg">
+            <h2 className="text-2xl font-bold mb-16">月の庭</h2>
+            <div className="flex flex-col space-y-10 font-bold text-xl text-white leading-relaxed">
               <p>
                 心の奥底にある
                 <br />
