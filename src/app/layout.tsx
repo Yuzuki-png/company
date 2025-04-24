@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: "株式会社月の庭",
   description:
     "「誰もがいつでも帰ってこれる庭」を目指して、対話を大切にした場づくりを行っています。共感・調和・共存を基盤とした、ポスト資本主義社会の先駆けとなる事業です。",
+  metadataBase: new URL("https://www.tsuki-no-niwa.site"),
   openGraph: {
     title: "株式会社月の庭",
     description:
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/home/home_tuki_background.jpg",
+        url: "https://www.tsuki-no-niwa.site/images/home/home_tuki_background.jpg",
         width: 1200,
         height: 630,
         alt: "株式会社月の庭",
@@ -45,7 +46,14 @@ export const metadata: Metadata = {
     title: "株式会社月の庭",
     description:
       "「誰もがいつでも帰ってこれる庭」を目指して、対話を大切にした場づくりを行っています。",
-    images: ["/images/home/home_tuki_background.jpg"],
+    images: [
+      {
+        url: "https://www.tsuki-no-niwa.site/images/home/home_tuki_background.jpg",
+        width: 1200,
+        height: 630,
+        alt: "株式会社月の庭",
+      },
+    ],
   },
 };
 
