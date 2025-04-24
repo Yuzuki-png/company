@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
 
             {/* Note icon */}
             <a
-              href="https://note.com/"
+              href="https://note.com/mayamoon"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black flex items-center"

@@ -117,13 +117,13 @@ export default function Shop() {
                   <br />
                   アイテムをお届けします。
                   <br />
-                  すべて一点一点心をめて創作しております。
+                  すべて一点一点心を込めて創作しております。
                 </p>
                 <a
                   href="https://www.mayamoon-art.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#ffff00] hover:bg-[#e6e600] text-black px-6 py-3 rounded-full font-light transition-all hover:scale-105"
+                  className="inline-block bg-[#006400] hover:bg-[#007800] text-white px-6 py-3 rounded-full font-light transition-all hover:scale-105"
                 >
                   オンラインショップへ
                 </a>

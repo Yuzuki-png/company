@@ -22,7 +22,31 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "株式会社月の庭",
   description:
-    "株式会社月の庭は、日本の伝統文化と現代の感性を融合させた空間づくりを通じて、心の豊かさと美しい暮らしを提案します。",
+    "「誰もがいつでも帰ってこれる庭」を目指して、対話を大切にした場づくりを行っています。共感・調和・共存を基盤とした、ポスト資本主義社会の先駆けとなる事業です。",
+  openGraph: {
+    title: "株式会社月の庭",
+    description:
+      "「誰もがいつでも帰ってこれる庭」を目指して、対話を大切にした場づくりを行っています。共感・調和・共存を基盤とした、ポスト資本主義社会の先駆けとなる事業です。",
+    url: "https://www.tsuki-no-niwa.site/",
+    siteName: "株式会社月の庭",
+    locale: "ja_JP",
+    type: "website",
+    images: [
+      {
+        url: "/images/月の庭.png",
+        width: 1200,
+        height: 630,
+        alt: "株式会社月の庭",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "株式会社月の庭",
+    description:
+      "「誰もがいつでも帰ってこれる庭」を目指して、対話を大切にした場づくりを行っています。",
+    images: ["/images/月の庭.png"],
+  },
 };
 
 export default function RootLayout({

@@ -376,21 +376,21 @@ export default function Works() {
               </div>
             </div>
 
-            {/* youtube */}
+            {/* 心が旅するお茶会 */}
             <div className="relative bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all fade-in-section">
               <h3 className="text-lg md:text-base font-medium p-4 md:p-3 bg-white border-b border-gray-100">
-                youtube
+                心が旅するお茶会
               </h3>
               <div className="relative w-full aspect-[4/5] md:aspect-[3/4] p-3 md:p-4">
                 <a
-                  href="https://www.youtube.com/channel/UC1SB60kDwlY-B7WA4sc45Ew"
+                  href="https://www.instagram.com/p/DHPqEC8PCdv/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full h-full"
                 >
                   <Image
-                    src="/images/works/5_youtube.jpg"
-                    alt="youtube"
+                    src="/images/works/12_work_shop.png"
+                    alt="心が旅するお茶会"
                     fill
                     style={{
                       objectFit: "contain",
@@ -486,6 +486,33 @@ export default function Works() {
                   <Image
                     src="/images/works/4_instagram_art.jpg"
                     alt="instagram artwork"
+                    fill
+                    style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                    }}
+                    priority
+                    className="slide-in-image"
+                  />
+                </a>
+              </div>
+            </div>
+
+            {/* youtube */}
+            <div className="relative bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all fade-in-section">
+              <h3 className="text-lg md:text-base font-medium p-4 md:p-3 bg-white border-b border-gray-100">
+                youtube
+              </h3>
+              <div className="relative w-full aspect-[4/5] md:aspect-[3/4] p-3 md:p-4">
+                <a
+                  href="https://www.youtube.com/channel/UC1SB60kDwlY-B7WA4sc45Ew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <Image
+                    src="/images/works/5_youtube.jpg"
+                    alt="youtube"
                     fill
                     style={{
                       objectFit: "contain",

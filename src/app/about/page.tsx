@@ -279,14 +279,26 @@ export default function About() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="fade-in-section max-w-xs mx-auto">
             <div className="mb-12 text-center">
-              {/* 会社情報テキスト画像 - 標準imgタグで表示サイズを確保 */}
-              <div className="w-full mx-auto overflow-visible">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/about/about_company_text_mobile.png"
-                  alt="株式会社月の庭 会社情報"
-                  className="w-[1000%] mx-auto -ml-[10%]"
-                />
+              {/* 会社情報テキスト */}
+              <div className="w-full mx-auto">
+                <meta name="robots" content="noindex, nofollow" />
+                <div className="mb-4 text-black">
+                  <h3 className="text-xl font-medium mb-4">
+                    会社名 株式会社月の庭
+                  </h3>
+                  <p className="text-lg mb-2 font-light leading-relaxed tracking-wide">
+                    所在地 〒336-0021 埼玉県さいたま市南区別所5丁目15番地2
+                  </p>
+                  <p className="text-lg mb-2 font-light leading-relaxed tracking-wide">
+                    代表取締役 西 麻耶子
+                  </p>
+                  <p className="text-lg mb-2 font-light leading-relaxed tracking-wide">
+                    設立 2025年4月21日
+                  </p>
+                  <p className="text-lg mb-2 font-light leading-relaxed tracking-wide">
+                    資本金 150万円
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -467,14 +479,26 @@ export default function About() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="fade-in-section max-w-5xl mx-auto">
             <div className="mb-20 text-left">
-              {/* 会社情報テキスト画像 - 標準imgタグで表示サイズを確保 */}
-              <div className="w-full mx-auto overflow-visible">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/about/about_company_text.png"
-                  alt="株式会社月の庭 会社情報"
-                  className="w-[90%] lg:w-[85%] mx-0"
-                />
+              {/* 会社情報テキスト */}
+              <div className="w-full mx-auto">
+                <meta name="robots" content="noindex, nofollow" />
+                <div className="mb-4 text-black">
+                  <h3 className="text-2xl font-medium mb-6">
+                    会社名 株式会社月の庭
+                  </h3>
+                  <p className="text-lg mb-3 font-light leading-relaxed tracking-wide">
+                    所在地 〒336-0021 埼玉県さいたま市南区別所5丁目15番地2
+                  </p>
+                  <p className="text-lg mb-3 font-light leading-relaxed tracking-wide">
+                    代表取締役 西 麻耶子
+                  </p>
+                  <p className="text-lg mb-3 font-light leading-relaxed tracking-wide">
+                    設立 2025年4月21日
+                  </p>
+                  <p className="text-lg mb-3 font-light leading-relaxed tracking-wide">
+                    資本金 150万円
+                  </p>
+                </div>
               </div>
             </div>
 
