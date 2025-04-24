@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/月の庭.png",
+        url: "/images/home/home_tuki_background.png",
         width: 1200,
         height: 630,
         alt: "株式会社月の庭",
