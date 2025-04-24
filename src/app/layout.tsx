@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "株式会社月の庭",
     description:
       "「誰もがいつでも帰ってこれる庭」を目指して、対話を大切にした場づくりを行っています。",
-    images: ["/images/月の庭.png"],
+    images: ["/images/home/home_tuki_background.jpg"],
   },
 };
 
