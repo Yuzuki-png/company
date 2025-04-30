@@ -20,6 +20,20 @@ export async function POST(req: NextRequest) {
       `,
       replyTo: email,
     });
+    await resend.emails.send({
+      from: "株式会社月の庭 <info@tuki-no-niwa.info>",
+      to: [email],
+      subject: "【株式会社月の庭】お問い合わせありがとうございます",
+      html: `
+        <p>※このメールはシステムからの自動返信です</p>
+        <p>お世話になっております。</p>
+        <p>この度は株式会社月の庭へお問い合わせいただき、誠にありがとうございます。</p>
+        <p>内容を確認のうえ、担当者より改めてご連絡させていただきますので、今しばらくお待ちいただけますと幸いです。</p>
+        <p>なお、お問い合わせの内容によっては、ご返信までにお時間をいただく場合がございます。</p>
+        <p>あらかじめご了承いただきますようお願い申し上げます。</p>
+        <p>引き続きどうぞよろしくお願いいたします。</p>
+      `,
+    });
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("メール送信エラー:", error);
