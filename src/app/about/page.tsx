@@ -168,7 +168,9 @@ export default function About() {
             </div>
 
             <div className="text-center">
-              <h2 className="text-6xl font-light section-title">Vision</h2>
+              <h2 className="text-6xl font-light section-title text-white">
+                Vision
+              </h2>
             </div>
           </div>
         </div>
@@ -216,7 +218,9 @@ export default function About() {
             </div>
 
             <div className="text-center">
-              <h2 className="text-6xl font-light section-title">Philosophy</h2>
+              <h2 className="text-6xl font-light section-title text-white">
+                Philosophy
+              </h2>
             </div>
           </div>
         </div>
@@ -255,7 +259,9 @@ export default function About() {
             </div>
 
             <div className="text-center">
-              <h2 className="text-6xl font-light section-title">Project</h2>
+              <h2 className="text-6xl font-light section-title text-white">
+                Project
+              </h2>
             </div>
           </div>
         </div>
@@ -303,7 +309,9 @@ export default function About() {
             </div>
 
             <div className="text-center">
-              <h2 className="text-6xl font-light section-title">Company</h2>
+              <h2 className="text-6xl font-light section-title text-white">
+                Company
+              </h2>
             </div>
           </div>
         </div>
@@ -371,7 +379,7 @@ export default function About() {
             </div>
 
             <div className="text-right">
-              <h2 className="text-8xl lg:text-9xl font-light section-title">
+              <h2 className="text-8xl lg:text-9xl font-light section-title text-white">
                 Vision
               </h2>
             </div>
@@ -410,7 +418,7 @@ export default function About() {
             </div>
 
             <div className="text-right">
-              <h2 className="text-8xl lg:text-9xl font-light section-title">
+              <h2 className="text-8xl lg:text-9xl font-light section-title text-white">
                 Philosophy
               </h2>
             </div>
@@ -452,7 +460,7 @@ export default function About() {
             </div>
 
             <div className="text-right">
-              <h2 className="text-8xl lg:text-9xl font-light section-title">
+              <h2 className="text-8xl lg:text-9xl font-light section-title text-white">
                 Project
               </h2>
             </div>
@@ -503,7 +511,7 @@ export default function About() {
             </div>
 
             <div className="text-right">
-              <h2 className="text-8xl lg:text-9xl font-light section-title">
+              <h2 className="text-8xl lg:text-9xl font-light section-title text-white">
                 Company
               </h2>
             </div>
