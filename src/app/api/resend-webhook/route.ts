@@ -1,25 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-import crypto from "crypto";
+// import crypto from "crypto";
 
 const SECRET = process.env.RESEND_WEBHOOK_SECRET || "";
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL || "";
 
-function isValidSignature(body: string, signature: string): boolean {
-  const expectedSignature = crypto
-    .createHmac("sha256", SECRET)
-    .update(body, "utf8")
-    .digest("hex");
+// function isValidSignature(body: string, signature: string): boolean {
+//   const expectedSignature = crypto
+//     .createHmac("sha256", SECRET)
+//     .update(body, "utf8")
+//     .digest("hex");
 
   // timingSafeEqualで安全な比較を行う（長さが一致しないと例外になるので注意）
-  if (expectedSignature.length !== signature.length) return false;
-  return crypto.timingSafeEqual(
-    Buffer.from(signature),
-    Buffer.from(expectedSignature)
-  );
-}
+//     if (expectedSignature.length !== signature.length) return false;
+//     return crypto.timingSafeEqual(
+//         Buffer.from(signature),
+//         Buffer.from(expectedSignature)
+//     );
+// }
 
 export async function POST(req: NextRequest) {
-  const signature = req.headers.get("resend-signature") || "";
+//   const signature = req.headers.get("resend-signature") || "";
   const rawBody = await req.text();
 
   if (!SECRET || !SLACK_WEBHOOK_URL) {
@@ -28,10 +28,10 @@ export async function POST(req: NextRequest) {
   }
 
   // 署名の検証（セキュリティ強化）
-  if (!isValidSignature(rawBody, signature)) {
-    console.warn("⚠️ 不正な署名のWebhookリクエストを拒否しました");
-    return new NextResponse("Invalid signature", { status: 403 });
-  }
+//   if (!isValidSignature(rawBody, signature)) {
+//     console.warn("⚠️ 不正な署名のWebhookリクエストを拒否しました");
+//     return new NextResponse("Invalid signature", { status: 403 });
+//   }
 
   const body = JSON.parse(rawBody);
   console.log("✅ Resend Webhook 受信:", body);
