@@ -66,22 +66,46 @@ export default function Home() {
               news
             </h2>
 
-            <div className="flex flex-col md:flex-row ">
-              <div className="md:w-1/2">
-                <div className="mb-2 text-gray-600 font-light">2025年4月</div>
-                <h3 className="text-xl font-light mb-2 text-black">
-                  「いつか消えてしまう私たちへ」個展開催
-                </h3>
-                <Link
-                  href="https://www.instagram.com/p/DGz73WMPkQt/?img_index=1"
-                  className="text-gray-600 hover:opacity-70 font-light"
-                >
-                  詳細はこちら
-                </Link>
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-1/2 h-80 overflow-y-auto pr-4">
+                <div className="mb-8">
+                  <div className="mb-2 text-gray-600 font-light">2025年4月</div>
+                  <h3 className="text-xl font-light mb-2 text-black">
+                    「いつか消えてしまう私たちへ」個展開催
+                  </h3>
+                  <Link
+                    href="https://www.instagram.com/p/DGz73WMPkQt/?img_index=1"
+                    className="text-gray-600 hover:opacity-70 font-light"
+                  >
+                    詳細はこちら
+                  </Link>
+                </div>
+
+                <div className="mb-8">
+                  <div className="mb-2 text-gray-500 font-light fira-sans-thin">
+                    2025年5月
+                  </div>
+                  <h3 className="text-xl font-light mb-2 text-gray-600">
+                    大宮「tokiwa」にてpopup開催
+                  </h3>
+                </div>
+
+                <div className="mb-8">
+                  <div className="mb-2 text-gray-600 font-light">2025年6月</div>
+                  <h3 className="text-xl font-light mb-2 text-black">
+                    月の庭ポッドキャストはじめました
+                  </h3>
+                  <Link
+                    href="https://open.spotify.com/show/5E4o9e5st8ZMeSAPxwUzgn?si=c3ba103b18884e5a&nd=1&dlsi=d5c736c154144527"
+                    className="text-gray-600 hover:opacity-70 font-light"
+                  >
+                    詳細はこちら
+                  </Link>
+                </div>
               </div>
-              <div className="md:w-1/2 mt-6 md:mt-0 flex justify-end">
-                <div className="w-full md:w-96 h-64 relative">
-                  {/* ここに実際の画像を入れる */}
+              <div className="md:w-1/2 flex justify-end">
+                <div className="w-full md:w-96 h-64 relative sticky top-0">
+                  {/* 画像部分は固定 */}
                   <div className="w-full h-full flex items-center justify-center">
                     <Image
                       src="/images/月.png"
@@ -93,17 +117,6 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-full">
-                <div className="mb-2 text-gray-500 font-light fira-sans-thin">
-                  2025年5月
-                </div>
-                <h3 className="text-xl font-light mb-2 text-gray-600">
-                  大宮「tokiwa」にてpopup開催
-                </h3>
               </div>
             </div>
           </div>

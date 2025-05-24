@@ -32,9 +32,9 @@ export async function POST(req: NextRequest) {
         <p><strong>内容:</strong><br>${message.replace(/\n/g, "<br>")}</p>
       `,
     });
-
+    console.log("2 通目送信開始");
     await transporter.sendMail({
-      from: `"株式会社月の庭" <info@tuki-no-niwa.info>`,
+      from: { name: "株式会社月の庭", address: "info@tuki-no-niwa.info" },
       to: email,
       subject: "【株式会社月の庭】お問い合わせありがとうございます",
       html: `
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
         <p>引き続きよろしくお願いいたします。</p>
       `,
     });
-
+    console.log("2 通目送信完了");
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("メール送信エラー:", err);

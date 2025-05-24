@@ -551,6 +551,33 @@ export default function Works() {
                 </a>
               </div>
             </div>
+
+            {/* spotify */}
+            <div className="relative bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all fade-in-section">
+              <h3 className="text-lg md:text-base font-medium p-4 md:p-3 bg-white border-b border-gray-100">
+                spotify
+              </h3>
+              <div className="relative w-full aspect-[4/5] md:aspect-[3/4] p-3 md:p-4">
+                <a
+                  href="https://open.spotify.com/show/5E4o9e5st8ZMeSAPxwUzgn?si=c3ba103b18884e5a&nd=1&dlsi=d5c736c154144527"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <Image
+                    src="/images/works/13_spotify.png"
+                    alt="spotify"
+                    fill
+                    style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                    }}
+                    priority
+                    className="slide-in-image"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
