@@ -65,31 +65,8 @@ export default function Home() {
             <h2 className="text-3xl font-light mb-16 text-black fira-sans-thin">
               news
             </h2>
-
             <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/2 h-80 overflow-y-auto pr-4">
-                <div className="mb-8">
-                  <div className="mb-2 text-gray-600 font-light">2025年4月</div>
-                  <h3 className="text-xl font-light mb-2 text-black">
-                    「いつか消えてしまう私たちへ」個展開催
-                  </h3>
-                  <Link
-                    href="https://www.instagram.com/p/DGz73WMPkQt/?img_index=1"
-                    className="text-gray-600 hover:opacity-70 font-light"
-                  >
-                    詳細はこちら
-                  </Link>
-                </div>
-
-                <div className="mb-8">
-                  <div className="mb-2 text-gray-500 font-light fira-sans-thin">
-                    2025年5月
-                  </div>
-                  <h3 className="text-xl font-light mb-2 text-gray-600">
-                    大宮「tokiwa」にてpopup開催
-                  </h3>
-                </div>
-
+              <div className="md:w-1/2">
                 <div className="mb-8">
                   <div className="mb-2 text-gray-600 font-light">2025年6月</div>
                   <h3 className="text-xl font-light mb-2 text-black">
