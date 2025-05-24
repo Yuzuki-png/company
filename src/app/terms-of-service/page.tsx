@@ -3,7 +3,7 @@ import React from "react";
 
 export default function TermsOfService() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-20 bg-black">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">
           利用規約
