@@ -18,7 +18,13 @@ export default function Profile() {
   useEffect(() => {
     // 初期表示時にモバイルかどうかを判定
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      const width = window.innerWidth;
+      // PCサイズ (1200px以上) は強制的にデスクトップ表示
+      if (width >= 1200) {
+        setIsMobile(false);
+      } else {
+        setIsMobile(width < 1024);
+      }
     };
 
     // 初回実行

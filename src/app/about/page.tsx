@@ -17,7 +17,13 @@ export default function About() {
   useEffect(() => {
     // 初期表示時にモバイルかどうかを判定
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      const width = window.innerWidth;
+      // PCサイズ (1200px以上) は強制的にデスクトップ表示
+      if (width >= 1200) {
+        setIsMobile(false);
+      } else {
+        setIsMobile(width < 1024);
+      }
     };
 
     // 初回実行
@@ -40,7 +46,8 @@ export default function About() {
       triggers.forEach((trigger) => trigger.kill());
 
       // メディアクエリの設定
-      const isMobileCheck = window.matchMedia("(max-width: 768px)").matches;
+      const width = window.innerWidth;
+      const isMobileCheck = width < 1200 ? (width < 1024) : false;
 
       // 要素をリセット
       gsap.set(".fade-in-section", {
@@ -340,7 +347,7 @@ export default function About() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pb-24">
-          <div className="max-w-3xl mx-auto ml-auto text-right">
+          <div className="max-w-3xl ml-auto text-right">
             <h2 className="text-2xl font-light mb-4 text-black">
               株式会社月の庭
             </h2>
