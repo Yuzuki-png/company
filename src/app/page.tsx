@@ -79,6 +79,18 @@ export default function Home() {
                     詳細はこちら
                   </Link>
                 </div>
+                <div className="mb-8">
+                  <div className="mb-2 text-gray-600 font-light">2025年6月</div>
+                  <h3 className="text-xl font-light mb-2 text-black">
+                    新作zine「Mayamoonのガーデン絵日記」発売
+                  </h3>
+                  <Link
+                    href="https://www.mayamoon-art.com/items/109791062"
+                    className="text-gray-600 hover:opacity-70 font-light"
+                  >
+                    詳細はこちら
+                  </Link>
+                </div>
               </div>
               <div className="md:w-1/2 flex justify-end">
                 <div className="w-full md:w-96 h-64 relative sticky top-0">

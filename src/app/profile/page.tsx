@@ -142,7 +142,7 @@ export default function Profile() {
         <div className="relative z-10 w-full max-w-sm mx-auto px-4 profile-content">
           <div className="flex flex-col items-center mb-6">
             {/* プロフィール画像 */}
-            <div className="w-52 h-52 mb-4 relative">
+            <div className="w-80 h-80 mb-4 relative">
               <Image
                 src="/images/profile/yosikobaProfile.png"
                 alt="よしこば プロフィール画像"
@@ -260,7 +260,7 @@ export default function Profile() {
         <div className="relative z-10 w-full max-w-3xl mx-auto px-4 profile-content">
           <div className="flex flex-col items-center mb-10">
             {/* プロフィール画像 */}
-            <div className="w-52 h-52 mb-6 relative">
+            <div className="w-80 h-80 mb-6 relative">
               <Image
                 src="/images/profile/yosikobaProfile.png"
                 alt="よしこば プロフィール画像"
